@@ -71,12 +71,10 @@ body{
     
     if($theme_couleur == "bleu"){
         echo "border : 3px solid #3498db;";
-        echo "border-width :2px;";
     }
     else{
         if($theme_couleur == "vert"){
             echo "border :3px solid #2ecc71;";
-            echo "border-width :22px;";
         }
         else{
             if($theme_couleur == "rouge"){
