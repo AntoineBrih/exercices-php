@@ -1,6 +1,6 @@
 <?php
 // Le nom de l'utilisateur
-$nom_utilisateur = "Alex Martin";
+$nom_utilisateur = "Jean Jésus";
 // Le thème de l'interface : bleu, vert ou rouge
 $theme_couleur = "vert";
 // Indique si le mode sombre est activé ou non
@@ -22,7 +22,11 @@ $img ="pdp.img"
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-<?php echo $nom_utilisateur; ?>
+
+<?php 
+echo $nom_utilisateur; 
+
+?>
 
 </title>
 
@@ -39,17 +43,65 @@ body{
         echo "color : #2c3e50;";
         
     }
+
+
     ?>
+}
+
+.nom{
+    text-align :center;
+    <?php
+    
+    if( $taille_police == "petite"){
+        echo "font-size : 14px;";
+    }
+    else{
+        if($taille_police == "normale"){
+            echo "font-size : 16px;";
+        }
+        else{
+            if($taille_police == "grande"){
+                echo "font-size : 18px;";
+            }
+        }
+    }
+    
+    
+    if($theme_couleur == "bleu"){
+        echo "color : 3px solid #3498db;";
+    }
+    else{
+        if($theme_couleur == "vert"){
+            echo "color :3px solid #2ecc71;";
+        }
+        else{
+            if($theme_couleur == "rouge"){
+                echo "color :3px solid #e74c3c;";
+            }
+            else{
+                if($theme_couleur == "violet"){
+                    echo "color :3px solid #9b59b6;";
+                }
+                else{
+                    if($theme_couleur == "caca"){
+                        echo "color :3px solid #614b3a;";
+                    }
+                }
+            }
+        }
+    }
+    
+?>
 }
 
 
 
 #profil-container{
     width: 600px;
-    height :700px;
+    height :500px;
     margin-left : auto;
     margin-right : auto;
-    text-align :center;
+    
     
     
     <?php
@@ -113,20 +165,24 @@ body{
 
 
 
-
+<section id= "avatar">
 <div id="profil-container">
 <header> 
 <?php 
-echo "Bonjour ! Je suis Alex Martin, dévellopeur passioné par les technologies web.";
+
+echo "<h1 class = 'nom'>$nom_utilisateur</h1>";
+echo "<br>";
+echo "<h1 class = 'nom'><img src = '$img'></h1>";
+echo "<br>";
+echo "Bonjour ! Je suis Jean Jésus, dévellopeur passioné par les technologies web.";
+echo "<br>";
 echo "<br>";
 echo "J'aime créer des solution innovantes et partager mes connaissances avec la communauté.";
 echo "<br>";
-echo "<img src = '$img'>";
-
 ?>
 </header>
 
-<section id= "avatar">
+
 </section>
 <section id ="à propos">
 </section>
