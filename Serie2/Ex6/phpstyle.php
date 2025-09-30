@@ -1,6 +1,6 @@
 <?php
 // Le nom de l'utilisateur
-$nom_utilisateur = "Jean Jésus";
+$nom_utilisateur = "Jean Martin";
 // Le thème de l'interface : bleu, vert ou rouge
 $theme_couleur = "vert";
 // Indique si le mode sombre est activé ou non
