@@ -4,22 +4,24 @@
 
 
 <?php
-
+if(isset ($_POST ['popF18'])){
+    $popF18 = $_POST ['popF18'];
+}
 // number_format ($nombre, 2);
 $coulF = "blue";
 $coulH = "red";
 
 
-$popF18 = 365252;
-$popH18 = 381788;
+$popF18 = $_POST['popF18'];
+$popH18 = $_POST['popH18'];
 
 
-$popFA = 1108283;
-$popHA = 1107414;
+$popFA = $_POST['popFA'];
+$popHA = $_POST['popHA'];
 
 
-$popF64 = 407211;
-$popH64 = 311627;
+$popF64 = $_POST['popF64'];
+$popH64 = $_POST['popH64'];
 
 
 $Total18 = $popF18 + $popH18;
@@ -59,8 +61,10 @@ $pourcentTotH = ($TotH / $bigTotal) *100;
 
 
 $nbFois18 = (int)(($popF18 / $Total18) * 20);
-$nbFoisA = ($popFA / $TotalA) * 20;
-$nbFois64 = ($popF64 / $Total64) * 20;
+$nbFoisA = (int)(($popFA / $TotalA) * 20);
+$nbFois64 = (int)(($popF64 / $Total64) * 20);
+$nbFoisTot = (int)(($TotF / $bigTotal) * 20);
+
 ?>
 
 
@@ -94,6 +98,17 @@ $nbFois64 = ($popF64 / $Total64) * 20;
 </head>
 
 <body>
+    <form  method="$_POST" action="stats.php">
+Nombres femmes moins de 18 ans: <input type="text" name="popF18"><br>
+Nombres hommes moins de 18 ans: <input type="text" name="popH18"><br>
+Nombres femmes 18-64 ans: <input type="text" name="popFA"><br>
+Nombres hommes 18-64 ans: <input type="text" name="popHA"><br>
+Nombres femmes plus de 64 ans: <input type="text" name="popF64"><br>
+Nombres hommes plus de 64 ans: <input type="text" name="popH64"><br>
+<input type="submit">
+<br>
+<br>
+</form>
 <table id="pop">
 <tr id='categorie'>
 <th>Catégorie</th>
@@ -107,8 +122,8 @@ $nbFois64 = ($popF64 / $Total64) * 20;
 <?php
 echo "<tr>";
 echo "<td>De moins de 18 ans :</td>";
-echo "<td class= 'CouleurF'>$popF18 ($pourcent18F)</td>";
-echo "<td class= 'CouleurH'>$popH18 ($pourcent18H)</td>";
+echo "<td class= 'CouleurF'>$popF18 (" .number_format($pourcent18F, 2) ."%)</td>";
+echo "<td class= 'CouleurH'>$popH18 (" .number_format($pourcent18H, 2) ."%)</td>";
 
 echo "<td>";
 for($i=0; $i<$nbFois18; $i++){
@@ -125,24 +140,49 @@ echo "</tr>";
 
 echo "<tr>";
 echo "<td>De 18 à 64 ans :</td>";
-echo "<td class= 'CouleurF'>$popFA ($pourcentFA)</td>";
-echo "<td class= 'CouleurH'>$popHA ($pourcentHA)</td>";
-echo "<td>$$$$$$$$$$$$$$$$$$$$</td>";
+echo "<td class= 'CouleurF'>$popFA (" .number_format($pourcentFA, 2) ."%)</td>";
+echo "<td class= 'CouleurH'>$popHA (" .number_format($pourcentHA, 2) ."%)</td>";
+echo "<td>";
+for($i=0; $i<$nbFoisA; $i++){
+    echo "<span class ='CouleurF'>$</span>";
+}
+
+for($i=0; $i < 20-$nbFoisA; $i++){
+    echo "<span class ='CouleurH'>$</span>";
+}
+echo "<td>";
+//echo "<td></td>";
 echo "</tr>";
 
 
 echo "<tr>";
 echo "<td>De plus de 64 ans :</td>";
-echo "<td class= 'CouleurF'>$popF64 ($pourcentF64)</td>";
-echo "<td class= 'CouleurH'>$popH64 ($pourcentH64)</td>";
-echo "<td>$$$$$$$$$$$$$$$$$$$$</td>";
+echo "<td class= 'CouleurF'>$popF64 (" .number_format($pourcentF64, 2) ."%)</td>";
+echo "<td class= 'CouleurH'>$popH64 (" .number_format($pourcentH64, 2) ."%)</td>";
+echo "<td>";
+for($i=0; $i<$nbFois64; $i++){
+    echo "<span class ='CouleurF'>$</span>";
+}
+
+for($i=0; $i < 20-$nbFois64; $i++){
+    echo "<span class ='CouleurH'>$</span>";
+}
+echo "</td>";
 echo "</tr>";
 
 echo "<tr id ='total'>";
 echo "<td>Total :</td>";
-echo "<td class= 'CouleurF'>$TotF ($pourcentTotF)</td>";
-echo "<td class= 'CouleurH'>$TotH ($pourcentTotH)</td>";
-echo "<td>$$$$$$$$$$$$$$$$$$$$</td>";
+echo "<td class= 'CouleurF'>$TotF (" .number_format($pourcentTotF, 2) ."%)</td>";
+echo "<td class= 'CouleurH'>$TotH (" .number_format($pourcentTotH, 2) ."%)</td>";
+echo "<td>";
+for($i=0; $i<$nbFoisTot; $i++){
+    echo "<span class ='CouleurF'>$</span>";
+}
+
+for($i=0; $i < 20-$nbFoisTot; $i++){
+    echo "<span class ='CouleurH'>$</span>";
+}
+echo "</td>";
 echo "</tr>";
 
 
