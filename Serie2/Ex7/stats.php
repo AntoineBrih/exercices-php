@@ -4,66 +4,49 @@
 
 
 <?php
-if(isset ($_POST ['popF18'])){
+if(isset ($_POST ['popF18']) && isset ($_POST ['popH18']) && isset ($_POST ['popFA'])&& isset ($_POST ['popHA']) && isset ($_POST ['popF64']) && isset ($_POST ['popH64'])){
     $popF18 = $_POST ['popF18'];
+    $popF18 = $_POST['popF18'];
+    $popH18 = $_POST['popH18'];
+    $popFA = $_POST['popFA'];
+    $popHA = $_POST['popHA'];
+    $popF64 = $_POST['popF64'];
+    $popH64 = $_POST['popH64'];
+    
+    $Total18 = $popF18 + $popH18;
+    $TotalA = $popFA + $popHA;
+    $Total64 = $popF64 + $popH64;
+    
+    $TotF = $popF18 + $popFA + $popF64;
+    $TotH = $popH18 + $popHA + $popH64;
+    
+    $bigTotal =  $TotF + $TotH;
+    
+    
+    $pourcent18F = ($popF18 / $Total18) * 100;
+    $pourcent18H = ($popH18 / $Total18) * 100;
+    
+    
+    $pourcentFA = ($popFA / $TotalA) * 100;
+    $pourcentHA = ($popHA / $TotalA) * 100;
+    
+    
+    $pourcentF64 = ($popF64 / $Total64) * 100;
+    $pourcentH64 = ($popH64 / $Total64) * 100;
+    
+    $pourcentTotF = ($TotF / $bigTotal) *100;
+    $pourcentTotH = ($TotH / $bigTotal) *100;
+    
+    $nbFois18 = (int)(($popF18 / $Total18) * 20);
+    $nbFoisA = (int)(($popFA / $TotalA) * 20);
+    $nbFois64 = (int)(($popF64 / $Total64) * 20);
+    $nbFoisTot = (int)(($TotF / $bigTotal) * 20);
+    
+    // number_format ($nombre, 2);
+    $coulF = "blue";
+    $coulH = "red";
+    
 }
-// number_format ($nombre, 2);
-$coulF = "blue";
-$coulH = "red";
-
-
-$popF18 = $_POST['popF18'];
-$popH18 = $_POST['popH18'];
-
-
-$popFA = $_POST['popFA'];
-$popHA = $_POST['popHA'];
-
-
-$popF64 = $_POST['popF64'];
-$popH64 = $_POST['popH64'];
-
-
-$Total18 = $popF18 + $popH18;
-$TotalA = $popFA + $popHA;
-$Total64 = $popF64 + $popH64;
-
-$TotF = $popF18 + $popFA + $popF64;
-$TotH = $popH18 + $popHA + $popH64;
-
-$bigTotal =  $TotF + $TotH;
-
-
-$pourcent18F = ($popF18 / $Total18) * 100;
-$pourcent18H = ($popH18 / $Total18) * 100;
-
-
-$pourcentFA = ($popFA / $TotalA) * 100;
-$pourcentHA = ($popHA / $TotalA) * 100;
-
-
-$pourcentF64 = ($popF64 / $Total64) * 100;
-$pourcentH64 = ($popH64 / $Total64) * 100;
-
-$pourcentTotF = ($TotF / $bigTotal) *100;
-$pourcentTotH = ($TotH / $bigTotal) *100;
-
-
-
-
-
-
-//dollars
-
-
-
-
-
-
-$nbFois18 = (int)(($popF18 / $Total18) * 20);
-$nbFoisA = (int)(($popFA / $TotalA) * 20);
-$nbFois64 = (int)(($popF64 / $Total64) * 20);
-$nbFoisTot = (int)(($TotF / $bigTotal) * 20);
 
 ?>
 
@@ -76,7 +59,7 @@ $nbFoisTot = (int)(($TotF / $bigTotal) * 20);
 .CouleurF{
     <?php
     echo "color :$coulF";
-
+    
     ?>
 }
 .CouleurH{
@@ -98,13 +81,13 @@ $nbFoisTot = (int)(($TotF / $bigTotal) * 20);
 </head>
 
 <body>
-    <form  method="$_POST" action="stats.php">
-Nombres femmes moins de 18 ans: <input type="text" name="popF18"><br>
-Nombres hommes moins de 18 ans: <input type="text" name="popH18"><br>
-Nombres femmes 18-64 ans: <input type="text" name="popFA"><br>
-Nombres hommes 18-64 ans: <input type="text" name="popHA"><br>
-Nombres femmes plus de 64 ans: <input type="text" name="popF64"><br>
-Nombres hommes plus de 64 ans: <input type="text" name="popH64"><br>
+<form  method="POST" action="stats.php"> <?php//action c'est là où on va envoyer les données, dans quel fichier ?>
+Nombres femmes moins de 18 ans: <input type="number" name="popF18"><br>
+Nombres hommes moins de 18 ans: <input type="number" name="popH18"><br>
+Nombres femmes 18-64 ans: <input type="number" name="popFA"><br>
+Nombres hommes 18-64 ans: <input type="number" name="popHA"><br>
+Nombres femmes plus de 64 ans: <input type="number" name="popF64"><br>
+Nombres hommes plus de 64 ans: <input type="number" name="popH64"><br>
 <input type="submit">
 <br>
 <br>
@@ -120,6 +103,7 @@ Nombres hommes plus de 64 ans: <input type="text" name="popH64"><br>
 
 
 <?php
+if(isset ($_POST ['popF18']) && isset ($_POST ['popH18']) && isset ($_POST ['popFA'])&& isset ($_POST ['popHA']) && isset ($_POST ['popF64']) && isset ($_POST ['popH64'])){
 echo "<tr>";
 echo "<td>De moins de 18 ans :</td>";
 echo "<td class= 'CouleurF'>$popF18 (" .number_format($pourcent18F, 2) ."%)</td>";
@@ -185,7 +169,7 @@ for($i=0; $i < 20-$nbFoisTot; $i++){
 echo "</td>";
 echo "</tr>";
 
-
+}
 
 ?>
 
