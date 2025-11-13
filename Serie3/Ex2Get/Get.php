@@ -9,7 +9,7 @@
 <body>
 
 <label>Article :<input type="text" id="champsArticle"></label>
-<label>Quantité :<input type="text" id="champsQuantite"></label>
+<label>Quantité :<input type="number" id="champsQuantite"></label>
 <button onclick="envoyer()">Envoyer</button>
 
 

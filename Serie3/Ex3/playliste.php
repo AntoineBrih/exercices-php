@@ -25,8 +25,11 @@
     <option value="Motivante">Motivante</option>
     <option value="Calme">Calme</option>
     <option value="Mélancolique">Mélancolique</option>
-    <option value="Crotte de chèvre">Crotte de chèvre</option>
+
 </select>
+
+
+<label>Quantité :<input type="number" id="champsQuantite"></label>
 
     
     <button onclick="envoyer()">Générer ma playliste</button>
@@ -35,7 +38,8 @@
     function envoyer(){
         let genre = document.getElementById("genre");
         let humeur = document.getElementById("humeur");
-        location.href="musique.php?genre="+genre.value+"&humeur="+humeur.value;
+        let champsQuantite = document.getElementById("champsQuantite");
+        location.href="musique.php?genre="+genre.value+"&humeur="+humeur.value+"&champsQuantite="+champsQuantite.value;
 
     }
     </script>
