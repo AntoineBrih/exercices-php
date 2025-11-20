@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream</title>
+</head>
+<body>
+
+
+
+<fieldset>
+    <label>Pseudo :<input type="text" name ="Pseudo" id="Pseudo"></label><br>
+    <label>Email :<input type="text" name ="Email" id="Email"></label><br>
+</fieldset><br>
+
+
+<fieldset>
+    <label for="Plateforme">Choisissez votre platforme:</label>
+    
+    <select name="Plateforme" id="Plateforme">
+        <option value="Twitch">Twitch</option>
+        <option value="Youtube">Youtube</option>
+        <option value="Tik tok">Tik tok</option>
+    </select><br>
+    
+    <label for="Plateforme">Choisissez votre préférence d'heure pour stream:</label>
+    <input type="time" id="appt" name="appt" min="06:00" max="00:00" required />
+    
+    <form>
+        <input type="checkbox" id="gaming" name="val1" value="val1">
+        <label for="val1"> Gaming </label><br>
+        
+        <input type="checkbox" id="Just Chatting" name="val2" value="val2">
+        <label for="val2">Just Chatting </label><br>
+        
+        <input type="checkbox" id="Créatif" name="val3" value="val3">
+        <label for="val3"> Créatif </label><br>
+        
+        <input type="checkbox" id="Sport" name="val4" value="val4">
+        <label for="val4"> Sport </label><br>
+        
+        <input type="checkbox" id="Musique" name="val5" value="val5">
+        <label for="val5"> Musique </label><br>
+
+        <input type="checkbox" id="Divertissement" name="val6" value="val6">
+        <label for="val6"> Divertissement </label><br>
+    </form>
+
+</fieldset><br>
+    
+
+     <fieldset>
+    
+    <label>Nombres d'heure de stream par semaine :<input type="number" id="Hstream"></label><br>
+    <label>Nombres d'abonnés :<input type="number" id="abonnes"></label><br>
+    
+    </fieldset>
+    <br>
+    <button onclick="envoyer()">Générer mon profil</button>
+
+
+</body>
+</html> 
+
+
+
+

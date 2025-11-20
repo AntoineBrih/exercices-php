@@ -8,10 +8,7 @@
 <body>
     <?php
     
-    $mail = $_POST['mail'];
-    $pseudo =$_POST['pseudo'];
-    $plateforme =$_POST['plateforme'];
-    
+
     ?>
 </body>
 </html>
