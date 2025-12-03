@@ -1,25 +1,14 @@
-
-
-
-
-
 <?php
-// Le nom de l'utilisateur
 $nom_utilisateur = "Jean Martin";
-// Le thème de l'interface : bleu, vert ou rouge
 $theme_couleur = "vert";
-// Indique si le mode sombre est activé ou non
 $mode_sombre = true;
-// Contient la taille de la police : "petite", "normale" ou "grande"
-
 $taille_police = "normale";
-// Indique si l'avatar de l'utilisateur doit être affiché
 $afficher_avatar = true;
-// Indique si l'utilisateur est en ligne
 $statut_en_ligne = false;
 $img ="pdp.img"
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +19,10 @@ $img ="pdp.img"
 
 <?php 
 echo $nom_utilisateur; 
-
 ?>
 
-</title>
 
+</title>
 <style>
 body{
     <?php 
@@ -43,20 +31,20 @@ body{
         echo "background-color : #2c3e50;";
         echo "color : #ecf0f1;";
     }
+
     else{
         echo "background-color : #ecf0f1;";
         echo "color : #2c3e50;";
-        
     }
-
-
     ?>
 }
 
+
+
 .nom{
     text-align :center;
-    <?php
     
+    <?php
     if( $taille_police == "petite"){
         echo "font-size : 14px;";
     }

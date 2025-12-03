@@ -6,63 +6,49 @@
     <title>Stream</title>
 </head>
 <body>
-<form method ="post" action ="profil.php">
-
+  <form method="post" action="profil.php">
+<fieldset>
+<label>Pseudo :<input type="text" name="Pseudo" id="Pseudo"></label><br><br>
+<label>Email :<input type="email" name="Email" id="Email"></label>
+</fieldset>
+<br>
 
 <fieldset>
-    <label>Pseudo :<input type="text" name ="Pseudo" id="Pseudo"></label><br>
-    <label>Email :<input type="text" name ="Email" id="Email"></label><br>
-</fieldset><br>
+<label for="Plateforme">Choisissez votre plateforme:</label>
+<select name="Plateforme" id="Plateforme">
+    <option value="Twitch">Twitch</option>
+    <option value="Youtube">Youtube</option>
+    <option value="Tiktok">Tik tok</option>
+</select>
+<br>
+  <input type="checkbox" id="Just chatting" name="Contenu1" value="Contenu1">
+  <label for="Contenu1"> Just chatting</label><br>
+  <input type="checkbox" id="Gaming" name="Contenu2" value="Contenu2">
+  <label for="Contenu2"> Gaming</label><br>
+  <input type="checkbox" id="Créatif" name="Contenu3" value="Contenu3">
+  <label for="Contenu3"> Créatif</label><br>
+  <input type="checkbox" id="Sport" name="Contenu4" value="Contenu4">
+  <label for="Contenu4"> Sport</label><br>
+  <input type="checkbox" id="Musique" name="Contenu5" value="Contenu5">
+  <label for="Contenu5"> Musique</label>
+<br>
 
-
+<label for="Streampref">Choisissez vos heures de stream préféré:</label>
+<select name="Streampref" id="Streampref">
+    <option value="Matin">Matin</option><br>
+    <option value="Après-Midi">Après-Midi</option><br>
+    <option value="Soir">Soir</option><br>
+    <option value="Nuit">Nuit</option><br>
+</select>
+</fieldset>
+<br>
 <fieldset>
-    <label for="Plateforme">Choisissez votre platforme:</label>
-    
-    <select name="Plateforme" id="Plateforme">
-        <option value="Twitch">Twitch</option>
-        <option value="Youtube">Youtube</option>
-        <option value="Tik tok">Tik tok</option>
-    </select><br>
-    
-    <label for="Plateforme">Choisissez votre préférence d'heure pour stream:</label>
-    <input type="time" id="HPref" name="HPref" min="06:00" max="00:00" required /><br>
-    
-    <form>
-        <input type="checkbox" id="gaming" name="val1" value="val1">
-        <label for="val1"> Gaming </label><br>
-        
-        <input type="checkbox" id="Just Chatting" name="val2" value="val2">
-        <label for="val2">Just Chatting </label><br>
-        
-        <input type="checkbox" id="Créatif" name="val3" value="val3">
-        <label for="val3"> Créatif </label><br>
-        
-        <input type="checkbox" id="Sport" name="val4" value="val4">
-        <label for="val4"> Sport </label><br>
-        
-        <input type="checkbox" id="Musique" name="val5" value="val5">
-        <label for="val5"> Musique </label><br>
+<label>Nombre d'abbonés 0 - 1000000 :<input type="number" name="NbrAbbo" id="NbrAbbo"></label><br><br>
+<label>Nombre d'heure de stream 1 - 100 :<input type="number" name="NbrStream" id="NbrStream"></label>
+</fieldset>
+<br>
 
-        <input type="checkbox" id="Divertissement" name="val6" value="val6">
-        <label for="val6"> Divertissement </label><br>
-    </form>
-
-</fieldset><br>
-    
-
-     <fieldset>
-    
-    <label>Nombres d'heure de stream par semaine :<input type="number" id="Hstream"></label><br>
-    <label>Nombres d'abonnés :<input type="number" id="abonnes"></label><br>
-    
-    </fieldset>
-    <br>
-    <button onclick="envoyer()">Générer mon profil</button>
-
-
+<button type="submit">Créer mon profil</button>
+</form>
 </body>
-</html> 
-
-
-
-
+</html>
