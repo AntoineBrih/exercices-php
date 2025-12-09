@@ -34,11 +34,26 @@
 
 
 <?php
-$champQuestion1 =$_GET ['$'];
-$champQuestion2 =$_GET ['La balise <?php?>'];
-$champQuestion3 =$_GET ['GET'];
-$champQuestion4 =$_GET ['if'];
-$champQuestion5 =$_GET ['.'];
+if (isset($_GET['ChampQuestion1'])){
+    $ChampQuestion1 = $_GET['ChampQuestion1'];  
+  }
+
+  if (isset($_GET['ChampQuestion2'])){
+    $ChampQuestion2 = $_GET['ChampQuestion2'];  
+  }
+
+  if (isset($_GET['ChampQuestion3'])){
+    $ChampQuestion3 = $_GET['ChampQuestion3'];  
+  }
+
+  if (isset($_GET['ChampQuestion4'])){
+    $ChampQuestion4 = $_GET['ChampQuestion4'];  
+  }
+
+  if (isset($_GET['ChampQuestion5'])){
+    $ChampQuestion5 = $_GET['ChampQuestion5'];  
+  }
+
 
 for($i=0; $i<$reponses; $i++){
     echo $reponses."/5";
