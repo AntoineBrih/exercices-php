@@ -41,6 +41,9 @@ if(isset($_POST['Pseudo']) && isset($_POST['Email']) && isset($_POST['Plateforme
         echo"Vos préférence de stream : Nuit";
         echo"<br>";
     }
+
+
+    
     if(isset($_POST['Contenu1'])){
         echo"Just chatting";
         echo"<br>";
