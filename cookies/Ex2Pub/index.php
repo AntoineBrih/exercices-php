@@ -3,16 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>Qu'est-ce qu'on ferait sans cookies</title>
 </head>
 <body>
-<a href="article.php?cat=gaming">Viens voir ce qu'il se passe dans la catégorie gaming &#x1F609<br></a>
-<a href="article.php?cat=sport">Viens voir ce qu'il se passe dans la catégorie sports &#x1F924<br></a>
-<a href="article.php?cat=voyage">Viens voir ce qu'il se passe dans la catégorie voyage &#128546<br></a>
-</body>
-</html>
+<a href="article.php?cat=gaming">Gaming &#x1F619<br></a>
+<a href="article.php?cat=sport">Sports &#x1F925<br></a>
+<a href="article.php?cat=voyage">Voyage &#x1F615<br></a>
 
 <?php
 include_once("article.php");
+
+if ($gaming > $voyage && $gaming > $sport) {
+    echo'<video width="320" height="240" controls>';
+    echo '<source src="pub_gaming.mp4" type="video/mp4">';
+    echo '</video>';
+    
+}
 ?>
+
+
+</body>
+</html>
 

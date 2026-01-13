@@ -1,3 +1,44 @@
+<?php
+if(isset($_GET['cat'])) {
+    
+    if($_GET['cat']== 'gaming') {
+        if(isset($_COOKIE['interetGaming'])){
+            $i = $_COOKIE['interetGaming'];
+            $i++;
+            setcookie('interetGaming', $i, time() + 60 * 60 * 24 * 7);
+        }
+        else{
+            setcookie('interetGaming', 1, time() + 60 * 60 * 24 * 7);
+        }
+        
+    }
+
+    if($_GET['cat']== 'sport') {
+     
+if(isset($_COOKIE['interetSport'])){
+    $i = $_COOKIE['interetSport'];
+    $i++;
+    setcookie('interetSport', $i, time() + 60 * 60 * 24 * 7);
+}
+else{
+    setcookie('interetSport', 1, time() + 60 * 60 * 24 * 7);
+}
+    }
+
+    if($_GET['cat']== 'voyage') {
+  if(isset($_COOKIE['interetVoyage'])){
+    $i = $_COOKIE['interetVoyage'];
+    $i++;
+    setcookie('interetVoyage', $i, time() + 60 * 60 * 24 * 7);
+}
+else{
+    setcookie('interetVoyage', 1, time() + 60 * 60 * 24 * 7);
+}
+    }
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +50,11 @@
 
 
 
-
 <?php
 if(isset($_GET['cat'])) {
     
     if($_GET['cat']== 'gaming') {
-        echo "<img src = 'gaming.jfif'>";
-        
+        echo "<img src = 'gaming.jfif'>";  
     }
 
     if($_GET['cat']== 'sport') {
@@ -26,11 +65,8 @@ if(isset($_GET['cat'])) {
         echo "<img src = 'voyage.jfif'>";
     }
 
-
-
 }
 ?>
-
 
 </body>
 </html>
