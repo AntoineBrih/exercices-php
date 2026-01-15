@@ -36,7 +36,21 @@ else{
 }
     }
 
-}
+
+
+        if(isset($_GET['reset'])){
+            setcookie('interetVoyage','',time() -3600);
+            setcookie('interetSport','',time() -3600);
+            setcookie('interetGaming','',time() -3600);
+        }
+
+
+        }
+   
+          
+    
+
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +58,7 @@ else{
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pub</title>
+<title>i</title>
 </head>
 <body>
 
@@ -54,15 +68,15 @@ else{
 if(isset($_GET['cat'])) {
     
     if($_GET['cat']== 'gaming') {
-        echo "<img src = 'gaming.jfif'>";  
+        echo "<img src = 'Images/gaming.jfif'>";  
     }
 
     if($_GET['cat']== 'sport') {
-        echo "<img src = 'sport2.jfif'>";
+        echo "<img src = 'Images/sport2.jfif'>";
     }
 
     if($_GET['cat']== 'voyage') {
-        echo "<img src = 'voyage.jfif'>";
+        echo "<img src = 'Images/voyage.jfif'>";
     }
 
 }
