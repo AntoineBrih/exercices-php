@@ -9,7 +9,7 @@
 <a href="article.php?cat=gaming">Gaming &#x1F619<br></a>
 <a href="article.php?cat=sport">Sports &#x1F925<br></a>
 <a href="article.php?cat=voyage">Voyage &#x1F615<br></a>
-<a href="article.php?cat=reset">Reset &#x1F625<br></a>
+<a href="article.php?reset=true">Reset &#x1F625<br></a>
 
 <?php
 
