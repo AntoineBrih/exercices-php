@@ -65,9 +65,32 @@ if(isset($_GET['etape'])) {
                 
                 echo "Date :".$_SESSION["date"];
                 echo "<br>";
-                
-                
+
+                echo "<label >Nom :<input name = 'nom' type='text'></label>";
+                echo "<label >Numéro de téléphone :<input name = 'tel' type='number'></label>";
+                echo "<label >Email :<input type='text' name = 'email'></label>";
+                echo "<label >Demande spéciale :<input name = 'dmd' type='text'></label>";
+                echo "<input type='submit' value='Confirmer la réservation'>";
+                echo "</form>";
             } 
+            
+        }
+        else {
+            if($i == 3){
+                if(isset($_POST["nom"]) && isset($_POST["tel"]) && isset($_POST["email"]) && isset($_POST["dmd"])){
+                    $_SESSION["nom"] = $_POST["nom"];
+                    $_SESSION["tel"] = $_POST["tel"];
+                    $_SESSION["email"] = $_POST["email"];
+                    $_SESSION["dmd"] = $_POST["dmd"];
+                    echo "Nom :". $_SESSION["nom"];
+                    echo "<br>";
+                    echo "Tel :". $_SESSION["tel"];
+                    echo "<br>";
+                    echo "Email :".$_SESSION["email"];
+                    echo "<br>";
+                    echo "Demand spéciale :".$_POST["dmd"];
+                }
+            }
         }
     }
     
