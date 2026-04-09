@@ -3,42 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Playliste test 2</title>
 </head>
-<body>    
+<body>
+    <form>
+        <fieldset>
+        <label for="Genre">Choix du genre</label>
 
-<h1>Créer ta playliste !</h1>
-    <fieldset>
-    <label for="genre">Choix du genre de musique</label>
 
     <select name="genre" id="genre">
+        <option id="rap">Rap</option>
+        <option id="Classic">Classic</option>
+        <option id="Electro">Electro</option>
+        <option id="Podcast">Podcast</option>
+        <option id="Anglophone">Anglophone</option>
+   </select>
 
-    <option value="Rap">Rap</option>
-    <option value="Rock">Rock</option>
-    <option value="Kpop">Kpop</option>
-    <option value="MusiQ">MusiQ</option>
-    
-</select>
+   <br>
 
-<br>
-<label for="humeur">Choix de votre humeur du moment</label>
-<select name="humeur" id="humeur">
-    <option value="joie">Je suis de toute joie</option>
-    <option value="triste">POV tu fais une dépression tah les anciens</option>
-    <option value="enerve">I'm tout colère colérique</option>
-    <option value="melancolie">Mélan-alcoolique</option>
-</select>
 
-<button type="submit">Générer la playliste</button>
 
-<script>
-    let genre = document.getElementById("genre").value;
-    let humeur = document.getElementById("humeur").value;
+   <label for="Humeur">Humeur du moment</label>
 
-    location.href="playlist.php?genre="+genre.value+"&humeur="humeur.value;
+    <select name="humeur" id="humeur">
+        <option value="Joie">Joie</option>
+        <option value="Triste">Triste</option>
+        <option value="Motivant">Motivant</option>
+        <option value="Calme">Calme</option>
+        <option value="Mélancolie">Mélancolie</option>
+    </select>
+
+
+     <label>Quantité de chansons dans la playliste <input type="number" id="nb"></label>
+     <button onclick="envoyer()">Générer ma playliste</button>
+        </fieldset>
+    </form>
+
+
+
+    <script>
+        function envoyer(){
+            let genre = document.getElementById("genre");
+            let humeur = document.getElementById("humeur");
+            let nb = document.getElementById("nb");
+            location.href="musique.php?genre="+genre.value+"&humeur="+humeur.value+"&nb="+nb.value;
+        }
     </script>
-
-</fieldset>
 
 </body>
 </html>

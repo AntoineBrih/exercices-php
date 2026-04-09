@@ -29,7 +29,7 @@
 </select>
 
 
-<label>Quantité :<input type="number" id="champsQuantite"></label>
+<label>Quantité :<input type="number" id="nb"></label>
 
     
     <button onclick="envoyer()">Générer ma playliste</button>
@@ -38,8 +38,8 @@
     function envoyer(){
         let genre = document.getElementById("genre");
         let humeur = document.getElementById("humeur");
-        let champsQuantite = document.getElementById("champsQuantite");
-        location.href="musique.php?genre="+genre.value+"&humeur="+humeur.value+"&champsQuantite="+champsQuantite.value;
+        let nb = document.getElementById("nb");
+        location.href="musique.php?genre="+genre.value+"&humeur="+humeur.value+"&nb="+nb.value;
 
     }
     </script>
